@@ -22,12 +22,19 @@ $(document).ready(function() {
 
     // make a dancer with a random position
 
-    var dancer = dancerMakerFunction(
+    var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+  });
+
+  $('.lineDancerbutton').on('click', function(event) {
+    console.log('click');
+    for (let i = 0; i < window.dancers.length; i++) {
+      window.dancer[i].lineUp();
+    }
   });
 });
 
